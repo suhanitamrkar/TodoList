@@ -4,18 +4,28 @@ import { TodoCard } from "./TodoCard";
 const TodoList = (props) => {
   const [tasks, setTasks] = useState([]);
   const [text, setText] = useState("");
+
+
+  //add new task functiom
   function addTask(text) {
     const newTask = {
       id: Date.now(),
       text,
       compeleted: false,
+      createdAt : new Date().toLocaleString()
     };
     setTasks([...tasks, newTask]);
+    console.log(newTask);
+    
     setText("");
   }
+
+//delete function
   function deleteTask(id) {
     setTasks(tasks.filter((task) => task.id !== id));
   }
+
+//completed function
   function toggleCompleted(id) {
     setTasks(
       tasks.map((task) => {
@@ -32,7 +42,7 @@ const TodoList = (props) => {
     <div className="flex justify-center">
       <div className=" bg-[#DEE5D4] w-[500px] h-[400px] mt-5   justify-center shadow-md sm:rounded-lg flex-col lg:w-[500px]  lg:h-[500px]  ">
         <p className="text-[2rem] font-bold text-blue-600 text-center py-3 ">
-          TODO LIST{" "}
+          TODO LIST
         </p>
         <div className="flex justify-center  mt-5">
           <input
