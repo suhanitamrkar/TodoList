@@ -1,21 +1,20 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useContext, useEffect, useState } from "react";
+
 
 import TodoInput from "./components/TodoInput";
 import { TodoCard } from "./components/TodoCard";
 import TodoList from "./components/TodoList";
-
-
+import { use } from "react";
+import TodosContext from "./context/Provider";
 
 function App() {
   
-
   return (
     <>
-      <TodoInput />
-
-      <TodoList  />
+      <main>
+        <TodoInput />
+        <TodoList />
+      </main>
     </>
   );
 }
