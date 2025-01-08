@@ -1,20 +1,20 @@
 import { useContext, useEffect, useState } from "react";
-
-
-import TodoInput from "./components/TodoInput";
-import { TodoCard } from "./components/TodoCard";
 import TodoList from "./components/TodoList";
-import { use } from "react";
-import TodosContext from "./context/Provider";
 
 function App() {
-  
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
   return (
     <>
-      <main>
-        <TodoInput />
-        <TodoList />
-      </main>
+      <div >
+        
+          <TodoList />
+        
+      </div>
     </>
   );
 }

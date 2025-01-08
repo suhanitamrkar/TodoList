@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { TiDeleteOutline } from "react-icons/ti";
 
 export const TodoCard = ({ task, deleteTask, toggleCompleted }) => {
+
+   
+    //handle change function
   function handleChange() {
     toggleCompleted(task.id);
   }
 
   return (
     <div>
-      <div className="relative bg-white flex justify-center overflow-x-auto shadow-md rounded-lg my-3  lg:w-[400px]">
-        <table className="w-[300px] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <div className="relative bg-white flex justify-between overflow-x-auto shadow-md rounded-lg my-3  lg:w-[400px]">
+        <table className="w-full px-3 mx-3 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className=" text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr className="flex justify-between items-center">
               <td scope="col" className="p-2">
